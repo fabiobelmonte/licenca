@@ -37,7 +37,7 @@ public class LicencaResource {
         return licencas.save(licenca);
     }
 
-    @PutMapping("{/id}")
+    @PutMapping("/{id}")
     public Licenca atualizar(@PathVariable Long id, @RequestBody Licenca licenca) {
         Licenca licencaBanco =  licencas.findById(id).get();
         licencaBanco.setLicenciado(licenca.isLicenciado());
